@@ -1,0 +1,13 @@
+<h1 mat-dialog-title>Termin Buchung</h1>
+<div mat-dialog-content>
+  <p>Termin: {{ data.proposal.from.toLocaleDateString() }} {{ data.proposal.from.toLocaleTimeString() }} - {{ data.proposal.to.toLocaleTimeString() }}</p>
+  <p>Geben sie ihren Namen ein und bestätigen sie ihre Terminbuchung</p>
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input matInput [(ngModel)]="data.clientName">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Abbrechen</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Bestätigen</button>
+</div>

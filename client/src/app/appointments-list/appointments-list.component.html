@@ -1,0 +1,7 @@
+<h1>Freie Termine</h1>
+<mat-list>
+  <mat-list-item *ngFor="let proposal of freeAppointments | async" style="color: black">
+    <span>{{ proposal.from.toLocaleString() }} - {{ proposal.to.toLocaleTimeString() }} &nbsp;</span>
+    <button mat-raised-button (click)="book(proposal)">Jetzt buchen</button>
+  </mat-list-item>
+</mat-list>
